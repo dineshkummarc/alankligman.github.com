@@ -4,7 +4,7 @@
   <title><![CDATA[Category: mozilla | otto destrukt]]></title>
   <link href="http://blog.ottodestrukt.org/blog/categories/mozilla/atom.xml" rel="self"/>
   <link href="http://blog.ottodestrukt.org/"/>
-  <updated>2011-12-15T12:02:19-05:00</updated>
+  <updated>2011-12-15T12:22:10-05:00</updated>
   <id>http://blog.ottodestrukt.org/</id>
   <author>
     <name><![CDATA[Alan Kligman]]></name>
@@ -41,6 +41,8 @@
 </code></pre>
 
 <p>This creates an Animation task that is scheduled after all Physics tasks, and runs every 100 ms in the Update phase. Because this task is in the Animation group, any other tasks that depend on Animation will be scheduled to run after this task. This is much cooler than a hard-coded game update loop because it's not necessary to modify engine code to add new services to your game, only the schedule you pass in when you create your task.</p>
+
+<p>(Thanks <a href="https://twitter.com/#!/secretrobotron">@secretrobotron</a> for the pretty image!)</p>
 ]]></content>
   </entry>
   
