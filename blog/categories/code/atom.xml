@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[otto destrukt]]></title>
-  <link href="http://blog.ottodestrukt.org/atom.xml" rel="self"/>
+  <title><![CDATA[Category: code | otto destrukt]]></title>
+  <link href="http://blog.ottodestrukt.org/blog/categories/code/atom.xml" rel="self"/>
   <link href="http://blog.ottodestrukt.org/"/>
   <updated>2011-12-14T19:45:35-05:00</updated>
   <id>http://blog.ottodestrukt.org/</id>
@@ -18,7 +18,7 @@
     <link href="http://blog.ottodestrukt.org/blog/2011/12/14/data-driven-game-update-loop/"/>
     <updated>2011-12-14T19:16:00-05:00</updated>
     <id>http://blog.ottodestrukt.org/blog/2011/12/14/data-driven-game-update-loop</id>
-    <content type="html"><![CDATA[<p>I&#8217;ve been refactoring the scheduler again to make it more data-driven. The previous incarnation provided priority-based scheduling, but that leaves it to the game developer to make sure that task priorities are correct, even for tasks that she didn&#8217;t write herself. The first change I made was to add scheduler phases. Right now there are three, named <em>Input</em>, <em>Update</em> and <em>Render</em>. The input and render phases shouldn&#8217;t result in any changes to game simulation state.</p>
+    <content type="html"><![CDATA[<p>I've been refactoring the scheduler again to make it more data-driven. The previous incarnation provided priority-based scheduling, but that leaves it to the game developer to make sure that task priorities are correct, even for tasks that she didn't write herself. The first change I made was to add scheduler phases. Right now there are three, named <em>Input</em>, <em>Update</em> and <em>Render</em>. The input and render phases shouldn't result in any changes to game simulation state.</p>
 
 <!-- more -->
 
@@ -38,7 +38,7 @@
 });
 </code></pre>
 
-<p>This creates an Animation task that is scheduled after all Physics tasks, and runs every 100 ms in the Update phase. Because this task is in the Animation group, any other tasks that depend on Animation will be scheduled to run after this task. This is much cooler than a hard-coded game update loop because it&#8217;s not necessary to modify engine code to add new services to your game, only the schedule you pass in when you create your task.</p>
+<p>This creates an Animation task that is scheduled after all Physics tasks, and runs every 100 ms in the Update phase. Because this task is in the Animation group, any other tasks that depend on Animation will be scheduled to run after this task. This is much cooler than a hard-coded game update loop because it's not necessary to modify engine code to add new services to your game, only the schedule you pass in when you create your task.</p>
 ]]></content>
   </entry>
   

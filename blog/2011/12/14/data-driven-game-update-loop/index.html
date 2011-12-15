@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>otto destrukt</title>
+  <title>data-driven game update loop - otto destrukt</title>
   <meta name="author" content="Alan Kligman">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.ottodestrukt.org">
+  <link rel="canonical" href="http://blog.ottodestrukt.org/blog/2011/12/14/data-driven-game-update-loop">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -62,15 +62,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2011/12/14/data-driven-game-update-loop/">Data-driven Game Update Loop</a></h1>
+      <h1 class="entry-title">Data-driven Game Update Loop</h1>
     
     
       <p class="meta">
@@ -93,25 +90,81 @@
   </header>
 
 
-  <div class="entry-content"><p>I&#8217;ve been refactoring the scheduler again to make it more data-driven. The previous incarnation provided priority-based scheduling, but that leaves it to the game developer to make sure that task priorities are correct, even for tasks that she didn&#8217;t write herself. The first change I made was to add scheduler phases. Right now there are three, named <em>Input</em>, <em>Update</em> and <em>Render</em>. The input and render phases shouldn&#8217;t result in any changes to game simulation state.</p>
+<div class="entry-content"><p>I&#8217;ve been refactoring the scheduler again to make it more data-driven. The previous incarnation provided priority-based scheduling, but that leaves it to the game developer to make sure that task priorities are correct, even for tasks that she didn&#8217;t write herself. The first change I made was to add scheduler phases. Right now there are three, named <em>Input</em>, <em>Update</em> and <em>Render</em>. The input and render phases shouldn&#8217;t result in any changes to game simulation state.</p>
+
+<!-- more -->
+
+
+<p>The second change I made was to add task groups to help capture different stages in each phase. For example, there are default groups for <em>Physics</em>, <em>Animation</em> and <em>Logic</em>, as well as others. A new task can specify a list of groups as dependancies during creation, and the scheduler will make sure that the new task runs only after each of its dependancies has finished. Creating a new task looks like this:</p>
+
+<pre><code>var t = new engine.scheduler.Task({
+    schedule: {
+        phase: 'Update',
+        depends: ['Physics'],
+        interval: 100
+    },
+    group: 'Animation',
+    callback: function() {
+        ...
+    }
+});
+</code></pre>
+
+<p>This creates an Animation task that is scheduled after all Physics tasks, and runs every 100 ms in the Update phase. Because this task is in the Animation group, any other tasks that depend on Animation will be scheduled to run after this task. This is much cooler than a hard-coded game update loop because it&#8217;s not necessary to modify engine code to add new services to your game, only the schedule you pass in when you create your task.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Alan Kligman</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-14T19:16:00-05:00" pubdate data-updated="true">Dec 14<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/code/'>code</a>, <a class='category' href='/blog/categories/javascript/'>javascript</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.ottodestrukt.org/blog/2011/12/14/data-driven-game-update-loop/" data-via="alankligman" data-counturl="http://blog.ottodestrukt.org/blog/2011/12/14/data-driven-game-update-loop/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+      
+    </p>
+  </footer>
+</article>
 
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2011/12/14/data-driven-game-update-loop/">more &rarr;</a>
-    </footer>
-  
 
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
 <aside class="sidebar">
   
     <section>
@@ -128,7 +181,7 @@
 <section>
   <h1>Github Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/alankligman">@alankligman</a> on Github
@@ -158,7 +211,7 @@
 <section>
   <h1>Latest Tweets</h1>
   <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   <script type="text/javascript">
     $.domReady(function(){
@@ -186,6 +239,7 @@
 
   
 </aside>
+
 
     </div>
   </div>
