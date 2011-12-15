@@ -95,7 +95,9 @@
 <!-- more -->
 
 
-<p>The second change I made was to add task groups to help capture different stages in each phase. For example, there are default groups for <em>Physics</em>, <em>Animation</em> and <em>Logic</em>, as well as others. A new task can specify a list of groups as dependancies during creation, and the scheduler will make sure that the new task runs only after each of its dependancies has finished. Creating a new task looks like this:</p>
+<p><img class="center" src="/images/gladius-update-loop.svg" width="300" height="400" title="engine update loop" alt="[ image: engine update loop ]"></p>
+
+<p>The second change I made was to add task groups to help capture different stages in each phase. For example, there are default groups for <em>Physics</em>, <em>Animation</em> and <em>Logic</em>, as well as others. A new task can specify a list of groups as dependencies during creation, and the scheduler will make sure that the new task runs only after each of its dependencies has finished. Creating a new task looks like this:</p>
 
 <pre><code>var t = new engine.scheduler.Task({
     schedule: {
@@ -138,7 +140,7 @@
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/code/'>code</a>, <a class='category' href='/blog/categories/javascript/'>javascript</a>
+    <a class='category' href='/blog/categories/code/'>code</a>, <a class='category' href='/blog/categories/javascript/'>javascript</a>, <a class='category' href='/blog/categories/mozilla/'>mozilla</a>
   
 </span>
 

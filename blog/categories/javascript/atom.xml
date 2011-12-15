@@ -4,7 +4,7 @@
   <title><![CDATA[Category: javascript | otto destrukt]]></title>
   <link href="http://blog.ottodestrukt.org/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://blog.ottodestrukt.org/"/>
-  <updated>2011-12-14T19:45:35-05:00</updated>
+  <updated>2011-12-15T12:02:19-05:00</updated>
   <id>http://blog.ottodestrukt.org/</id>
   <author>
     <name><![CDATA[Alan Kligman]]></name>
@@ -23,7 +23,9 @@
 <!-- more -->
 
 
-<p>The second change I made was to add task groups to help capture different stages in each phase. For example, there are default groups for <em>Physics</em>, <em>Animation</em> and <em>Logic</em>, as well as others. A new task can specify a list of groups as dependancies during creation, and the scheduler will make sure that the new task runs only after each of its dependancies has finished. Creating a new task looks like this:</p>
+<p><img class="center" src="/images/gladius-update-loop.svg" width="300" height="400" title="engine update loop" alt="[ image: engine update loop ]"></p>
+
+<p>The second change I made was to add task groups to help capture different stages in each phase. For example, there are default groups for <em>Physics</em>, <em>Animation</em> and <em>Logic</em>, as well as others. A new task can specify a list of groups as dependencies during creation, and the scheduler will make sure that the new task runs only after each of its dependencies has finished. Creating a new task looks like this:</p>
 
 <pre><code>var t = new engine.scheduler.Task({
     schedule: {
