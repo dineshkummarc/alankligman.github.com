@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[otto destrukt]]></title>
+  <link href="http://blog.ottodestrukt.org/atom.xml" rel="self"/>
+  <link href="http://blog.ottodestrukt.org/"/>
+  <updated>2012-01-03T11:55:38-05:00</updated>
+  <id>http://blog.ottodestrukt.org/</id>
+  <author>
+    <name><![CDATA[Alan Kligman]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+</feed>
