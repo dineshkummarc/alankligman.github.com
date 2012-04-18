@@ -4,7 +4,7 @@
   <title><![CDATA[Category: javascript | otto destrukt]]></title>
   <link href="http://blog.ottodestrukt.org/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://blog.ottodestrukt.org/"/>
-  <updated>2012-04-18T12:56:15-04:00</updated>
+  <updated>2012-04-18T13:40:24-04:00</updated>
   <id>http://blog.ottodestrukt.org/</id>
   <author>
     <name><![CDATA[Alan Kligman]]></name>
@@ -12,6 +12,46 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[gladius 0.1]]></title>
+    <link href="http://blog.ottodestrukt.org/blog/2012/04/18/gladius-0-dot-1/"/>
+    <updated>2012-04-18T11:17:00-04:00</updated>
+    <id>http://blog.ottodestrukt.org/blog/2012/04/18/gladius-0-dot-1</id>
+    <content type="html"><![CDATA[<p>Last week we released an early prototype of our 3D game engine. The engine is pure HTML5/JS and is designed to run client-side in the browser. Right now we're focusing our test efforts in Firefox and Chrome, but the engine should run well in other standards-compliant browsers that support WebGL.</p>
+
+<!-- more -->
+
+
+<p>So, what can the prototype do? Right now the engine provides</p>
+
+<ul>
+<li>a game loop</li>
+<li>resource loading</li>
+<li>an entity/component framework</li>
+<li>a 3D renderer (CubicVR)</li>
+<li>a 2D physics engine (Box2D)</li>
+<li>a bunch of unit tests and examples</li>
+</ul>
+
+
+<p>Modularity is a strong design goal and we use require.js to keep the source code in small files that define reusable modules.</p>
+
+<h3>demo</h3>
+
+<p><img class="center" src="/images/no-comply.png" width="370" height="280" title="no comply demo" alt="[ image: no comply demo ]"></p>
+
+<p>Earlier this year we started collaborating with Andor Salga to build a demo game on our prototype engine. The demo shows off some of what the engine can do right now, but it's also been very helpful in testing out some of our APIs. It's also helping us collect some early performance feedback from the platform and identify <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=744546">issues</a>.</p>
+
+<h3>what's next</h3>
+
+<p>You probably noticed that there are some important features still missing from the engine, like sound support. In the coming weeks I'll be working on a cross-platform sound extension for the engine. Input also needs work. Right now there's keyboard support but it's difficult to use. I plan to add support for input maps and stateful event handling to make it easier for game logic to react to state changes. Finally, I'm working on some refactoring in the engine core to clarify some key abstractions and to break code apart so that it's more reusable and easier to unit test.</p>
+
+<p>There are a few infrastructure changes coming as well. Dan Mosedale prepared a pre-commit hook that runs our unit tests. We're also updating a bunch of programs in our toolchain to newer versions. And if we have time this quarter, we'll be refactoring our unit test suite to use require.js so that we can test our source modules in isolation.</p>
+
+<p>For more information about Gladius, check out our <a href="https://github.com/gladiusjs/gladius-core">git repository</a> and our <a href="https://mozillalabs.com/en-US/gladius/">project page</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[data-driven game update loop]]></title>

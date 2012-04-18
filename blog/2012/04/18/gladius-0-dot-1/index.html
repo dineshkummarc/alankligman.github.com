@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: code - otto destrukt</title>
+  <title>gladius 0.1 - otto destrukt</title>
   <meta name="author" content="Alan Kligman">
 
   
-  <meta name="description" content="Category: code">
+  <meta name="description" content="Last week we released an early prototype of our 3D game engine. The engine is pure HTML5/JS and is designed to run client-side in the browser. Right &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.ottodestrukt.orgblog/categories/code">
+  <link rel="canonical" href="http://blog.ottodestrukt.org/blog/2012/04/18/gladius-0-dot-1">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -63,52 +63,117 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Code</h1>
+    
+      <h1 class="entry-title">Gladius 0.1</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-18T11:17:00-04:00" pubdate data-updated="true">Apr 18<span>th</span>, 2012</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>Last week we released an early prototype of our 3D game engine. The engine is pure HTML5/JS and is designed to run client-side in the browser. Right now we&#8217;re focusing our test efforts in Firefox and Chrome, but the engine should run well in other standards-compliant browsers that support WebGL.</p>
 
-  
-  <h2>2012</h2>
-
-<article>
-  
-<h1><a href="/blog/2012/04/18/gladius-0-dot-1/">gladius 0.1</a></h1>
-<time datetime="2012-04-18T11:17:00-04:00" pubdate><span class='month'>Apr</span> <span class='day'>18</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/code/'>code</a>, <a class='category' href='/blog/categories/gladius/'>gladius</a>, <a class='category' href='/blog/categories/javascript/'>javascript</a>, <a class='category' href='/blog/categories/mozgames/'>mozgames</a>, <a class='category' href='/blog/categories/mozilla/'>mozilla</a></span>
-</footer>
+<!-- more -->
 
 
-</article>
+<p>So, what can the prototype do? Right now the engine provides</p>
+
+<ul>
+<li>a game loop</li>
+<li>resource loading</li>
+<li>an entity/component framework</li>
+<li>a 3D renderer (CubicVR)</li>
+<li>a 2D physics engine (Box2D)</li>
+<li>a bunch of unit tests and examples</li>
+</ul>
 
 
+<p>Modularity is a strong design goal and we use require.js to keep the source code in small files that define reusable modules.</p>
 
-  
-  <h2>2011</h2>
+<h3>demo</h3>
 
-<article>
-  
-<h1><a href="/blog/2011/12/14/data-driven-game-update-loop/">data-driven game update loop</a></h1>
-<time datetime="2011-12-14T19:16:00-05:00" pubdate><span class='month'>Dec</span> <span class='day'>14</span> <span class='year'>2011</span></time>
+<p><img class="center" src="/images/no-comply.png" width="370" height="280" title="no comply demo" alt="[ image: no comply demo ]"></p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/code/'>code</a>, <a class='category' href='/blog/categories/gladius/'>gladius</a>, <a class='category' href='/blog/categories/javascript/'>javascript</a>, <a class='category' href='/blog/categories/mozgames/'>mozgames</a>, <a class='category' href='/blog/categories/mozilla/'>mozilla</a></span>
-</footer>
+<p>Earlier this year we started collaborating with Andor Salga to build a demo game on our prototype engine. The demo shows off some of what the engine can do right now, but it&#8217;s also been very helpful in testing out some of our APIs. It&#8217;s also helping us collect some early performance feedback from the platform and identify <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=744546">issues</a>.</p>
 
+<h3>what&#8217;s next</h3>
 
-</article>
+<p>You probably noticed that there are some important features still missing from the engine, like sound support. In the coming weeks I&#8217;ll be working on a cross-platform sound extension for the engine. Input also needs work. Right now there&#8217;s keyboard support but it&#8217;s difficult to use. I plan to add support for input maps and stateful event handling to make it easier for game logic to react to state changes. Finally, I&#8217;m working on some refactoring in the engine core to clarify some key abstractions and to break code apart so that it&#8217;s more reusable and easier to unit test.</p>
 
+<p>There are a few infrastructure changes coming as well. Dan Mosedale prepared a pre-commit hook that runs our unit tests. We&#8217;re also updating a bunch of programs in our toolchain to newer versions. And if we have time this quarter, we&#8217;ll be refactoring our unit test suite to use require.js so that we can test our source modules in isolation.</p>
+
+<p>For more information about Gladius, check out our <a href="https://github.com/gladiusjs/gladius-core">git repository</a> and our <a href="https://mozillalabs.com/en-US/gladius/">project page</a>.</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Alan Kligman</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-18T11:17:00-04:00" pubdate data-updated="true">Apr 18<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/code/'>code</a>, <a class='category' href='/blog/categories/gladius/'>gladius</a>, <a class='category' href='/blog/categories/javascript/'>javascript</a>, <a class='category' href='/blog/categories/mozgames/'>mozgames</a>, <a class='category' href='/blog/categories/mozilla/'>mozilla</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.ottodestrukt.org/blog/2012/04/18/gladius-0-dot-1/" data-via="alankligman" data-counturl="http://blog.ottodestrukt.org/blog/2012/04/18/gladius-0-dot-1/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/12/14/data-driven-game-update-loop/" title="Previous Post: data-driven game update loop">&laquo; data-driven game update loop</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
 </div>
