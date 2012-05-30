@@ -4,7 +4,7 @@
   <title><![CDATA[Category: mozgames | otto destrukt]]></title>
   <link href="http://blog.ottodestrukt.org/blog/categories/mozgames/atom.xml" rel="self"/>
   <link href="http://blog.ottodestrukt.org/"/>
-  <updated>2012-05-30T19:20:58-04:00</updated>
+  <updated>2012-05-30T19:37:40-04:00</updated>
   <id>http://blog.ottodestrukt.org/</id>
   <author>
     <name><![CDATA[Alan Kligman]]></name>
@@ -26,7 +26,7 @@ Over the past month we've spent a bunch of time refactoring Gladius to make the 
 
 <p>Starting with 0.2, we will be shipping Gladius as the engine core plus a few default extensions.
 This allows us to keep Gladius lightweight by removing large third-party libraries from the core, and allows developers to bring their own preferred libraries for things like rendering backends.
-As a result, some engine parts that used to live in <a href="https://github.com/gladiusjs/gladius-core">gladiusjs/gladius-core</a> are now extensions living in their own repositories: David Perit and I have already created <a href="https://github.com/gladiusjs/gladius-cubicvr">gladiusjs/gladius-cubicvr</a> and <a href="https://github.com/gladiusjs/gladius-box2d">gladiusjs/gladius-box2d</a> extensions, and they are good examples of how to write an extension for Gladius.</p>
+As a result, some engine parts that used to live in <a href="https://github.com/gladiusjs/gladius-core">gladiusjs/gladius-core</a> are now extensions living in their own repositories: <a href="http://twitter.com/dperit">David Perit</a> and I have already created <a href="https://github.com/gladiusjs/gladius-cubicvr">gladiusjs/gladius-cubicvr</a> and <a href="https://github.com/gladiusjs/gladius-box2d">gladiusjs/gladius-box2d</a> extensions, and they are good examples of how to write an extension for Gladius.</p>
 
 <p>We have created a new repository, <a href="https://github.com/gladiusjs/gladius">gladiusjs/gladius</a>, to host the shipped version of Gladius.  It will consist of the engine core along with a default set of extensions sufficient for building a game, a directory of examples, and documentation.
 You can also use this repository to report defects and add feature requests.
